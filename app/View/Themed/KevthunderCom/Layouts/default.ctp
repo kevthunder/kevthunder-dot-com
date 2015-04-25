@@ -10,9 +10,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title><?php echo $title_for_layout; ?> &raquo; <?php echo Configure::read('Site.title'); ?></title>
+        <title><?php if(!empty($title_for_layout)) echo $title_for_layout.' &raquo;'; ?> <?php echo Configure::read('Site.title'); ?></title>
 		<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $this->Html->url('/favicon.ico'); ?>" />
         <?php
             echo $this->Meta->meta();
             echo $this->Layout->feed();
