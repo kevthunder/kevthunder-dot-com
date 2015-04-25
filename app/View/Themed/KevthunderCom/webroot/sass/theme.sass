@@ -5,6 +5,10 @@
  
 $gray: #818285
 $almostBlack: #333
+
+$mediumScreen: 975px
+$smallScreen: 700px
+$miniScreen: 300px
  
 @import "icons"
 
@@ -21,12 +25,12 @@ body
   font-weight: normal
   line-height: 1.5em
   color: #484848
-  min-width: 950px
-  @media (max-width: 950px)
-    min-width: 700px
-  @media (max-width: 700px)
-    min-width: 300px
-  min-height: 300px
+  min-width: $mediumScreen - 25
+  @media (max-width: $mediumScreen)
+    min-width: $smallScreen - 25
+  @media (max-width: $smallScreen)
+    min-width: $miniScreen
+  min-height: $miniScreen
   position: absolute
   height: 100%
   width: 100%
@@ -69,23 +73,17 @@ hr
  * wrapper
 
 #wrapper
-  width: 950px
+  width: $mediumScreen - 25
   position: absolute
-  margin-left: -475px
+  margin-left: ($mediumScreen - 25)/ -2
   left: 50%
-  @media (max-width: 950px)
-    width: 700px
-    margin-left: -350px
-  @media (max-width: 700px)
+  @media (max-width: $mediumScreen)
+    width: $smallScreen - 25
+    margin-left: ($smallScreen - 25)/ -2
+  @media (max-width: $smallScreen)
     width: 300px
     margin-left: -150px
 
-  
-  
-@media (min-width: 951px)
-  .emptyHome #wrapper
-    top: 40%
-    margin-top: -200px
 
 /**
  * Form
@@ -187,7 +185,7 @@ form
 #header
   margin-top: 0px
   margin-bottom: 40px
-  @media (max-width: 950px)
+  @media (max-width: $mediumScreen)
     margin-top: 40px
 
 .home #header
@@ -212,9 +210,9 @@ form
   #logo
     padding: 20px 70px 50px 30px
     float: left
-    @media (max-width: 950px)
+    @media (max-width: $mediumScreen)
       padding: 15px
-    @media (max-width: 700px)
+    @media (max-width: $smallScreen)
       float: none
     a
       font-family: 'Josefin Sans', sans-serif
@@ -244,9 +242,9 @@ form
   nav.mainMenu
     margin: 150px 0 0 0
     float: left
-    @media (max-width: 950px)
+    @media (max-width: $mediumScreen)
       margin: 30px 0 0 50px
-    @media (max-width: 700px)
+    @media (max-width: $smallScreen)
       margin: 30px 0 0 0
       float: none
     ul
@@ -302,7 +300,7 @@ form
           background-position-y: -85px
         a:hover
           background-color: #8dc63f
-        @media (max-width: 950px)
+        @media (max-width: $mediumScreen)
           float: none
           a.cv, a.oldStuff
             padding-left: 120px
@@ -310,7 +308,7 @@ form
             background-position-x: 53px
           a.oldStuff
             background-position-x: 18px
-        @media (max-width: 700px)
+        @media (max-width: $smallScreen)
           a
             padding: 5px
         ul
@@ -560,7 +558,7 @@ div.paging
 /* IE6
 /* IE7
 
-@media (min-width: 701px)
+@media (min-width: $smallScreen+1 )
   #content .twoColPage >
     .left
       width: 260px
@@ -571,6 +569,17 @@ div.paging
       width: 600px
       float: right
 
+      
+/**
+ * Twitter widget
+ 
+.twitter-widget
+  padding-left: 375px
+  @media (max-width: $mediumScreen )
+    padding-left: 350px
+  @media (max-width: $smallScreen )
+    padding-left: 0
+      
 /**
  * games
 
@@ -600,7 +609,7 @@ div.paging
  * commics
 
 #ComicsIndex
-  @media (min-width: 701px)
+  @media (min-width: $smallScreen+1 )
     padding-left: 50px
     .left
       height: 400px

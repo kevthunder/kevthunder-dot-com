@@ -31,9 +31,9 @@ body {
   height: 100%;
   width: 100%;
   margin: 0; }
-  @media (max-width: 950px) {
+  @media (max-width: 975px) {
     body {
-      min-width: 700px; } }
+      min-width: 675px; } }
   @media (max-width: 700px) {
     body {
       min-width: 300px; } }
@@ -78,19 +78,15 @@ hr {
   position: absolute;
   margin-left: -475px;
   left: 50%; }
-  @media (max-width: 950px) {
+  @media (max-width: 975px) {
     #wrapper {
-      width: 700px;
-      margin-left: -350px; } }
+      width: 675px;
+      margin-left: -337.5px; } }
   @media (max-width: 700px) {
     #wrapper {
       width: 300px;
       margin-left: -150px; } }
 
-@media (min-width: 951px) {
-  .emptyHome #wrapper {
-    top: 40%;
-    margin-top: -200px; } }
 /*
  * Form */
 form .input {
@@ -283,7 +279,7 @@ form input[type=submit] {
 #header {
   margin-top: 0px;
   margin-bottom: 40px; }
-  @media (max-width: 950px) {
+  @media (max-width: 975px) {
     #header {
       margin-top: 40px; } }
 
@@ -306,7 +302,7 @@ form input[type=submit] {
 #header #logo {
   padding: 20px 70px 50px 30px;
   float: left; }
-  @media (max-width: 950px) {
+  @media (max-width: 975px) {
     #header #logo {
       padding: 15px; } }
   @media (max-width: 700px) {
@@ -340,7 +336,7 @@ form input[type=submit] {
 #header nav.mainMenu {
   margin: 150px 0 0 0;
   float: left; }
-  @media (max-width: 950px) {
+  @media (max-width: 975px) {
     #header nav.mainMenu {
       margin: 30px 0 0 50px; } }
   @media (max-width: 700px) {
@@ -403,7 +399,7 @@ form input[type=submit] {
         background-position-y: -85px; }
       #header nav.mainMenu ul li a:hover {
         background-color: #8dc63f; }
-      @media (max-width: 950px) {
+      @media (max-width: 975px) {
         #header nav.mainMenu ul li {
           float: none; }
           #header nav.mainMenu ul li a.cv, #header nav.mainMenu ul li a.oldStuff {
@@ -654,6 +650,17 @@ div.paging {
   #content .twoColPage > .right {
     width: 600px;
     float: right; } }
+/*
+ * Twitter widget */
+.twitter-widget {
+  padding-left: 375px; }
+  @media (max-width: 975px) {
+    .twitter-widget {
+      padding-left: 350px; } }
+  @media (max-width: 700px) {
+    .twitter-widget {
+      padding-left: 0; } }
+
 /*
  * games */
 #GamesIndex .game a {
