@@ -1,0 +1,780 @@
+@charset "CP850";
+/*
+ * Minimal theme for Croogo
+ *
+ * Link: http://fahad19.com/blog/minimal-theme */
+@font-face {
+  font-family: "fontello";
+  src: url("../font/fontello.eot?19843796");
+  src: url("../font/fontello.eot?19843796#iefix") format("embedded-opentype"), url("../font/fontello.woff?19843796") format("woff"), url("../font/fontello.ttf?19843796") format("truetype"), url("../font/fontello.svg?19843796#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*@media screen and (-webkit-min-device-pixel-ratio:0) {
+ *  @font-face {
+ *    font-family: 'fontello';
+ *    src: url('../font/fontello.svg?19843796#fontello') format('svg');
+ *  }
+ *} */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1.5em;
+  color: #484848;
+  min-width: 950px;
+  min-height: 300px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0; }
+  @media (max-width: 950px) {
+    body {
+      min-width: 700px; } }
+  @media (max-width: 700px) {
+    body {
+      min-width: 300px; } }
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600; }
+  a:hover {
+    color: #666666; }
+
+p + p {
+  margin-top: 20px; }
+
+pre {
+  background: #f7f7f7;
+  margin: 10px 0px 10px 0px;
+  padding: 20px;
+  font-family: Courier, monospace; }
+
+blockquote {
+  margin: 20px 0px 20px 0px;
+  padding: 20px 50px 20px 50px; }
+  blockquote p {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 16px;
+    font-style: italic; }
+    blockquote p cite {
+      text-align: right;
+      display: block; }
+
+hr {
+  margin-top: 100px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  color: white; }
+
+/*
+ * wrapper */
+#wrapper {
+  width: 950px;
+  position: absolute;
+  margin-left: -475px;
+  left: 50%; }
+  @media (max-width: 950px) {
+    #wrapper {
+      width: 700px;
+      margin-left: -350px; } }
+  @media (max-width: 700px) {
+    #wrapper {
+      width: 300px;
+      margin-left: -150px; } }
+
+@media (min-width: 951px) {
+  .emptyHome #wrapper {
+    top: 40%;
+    margin-top: -200px; } }
+/*
+ * Form */
+form .input {
+  margin-bottom: 15px; }
+  form .input label {
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 0px 0px 5px 0px; }
+  form .input input[type=text] {
+    width: 500px;
+    border: 1px solid #a5acb2;
+    padding: 5px; }
+    form .input input[type=text]:focus {
+      background: #fafafa; }
+  form .input textarea {
+    width: 500px;
+    border: 1px solid #a5acb2;
+    padding: 5px;
+    font-family: Arial; }
+    form .input textarea:focus {
+      background: #fafafa; }
+form input[type=submit] {
+  background: #464646;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #333333;
+  padding: 5px; }
+  form input[type=submit]:active {
+    border: 1px solid #cccccc; }
+
+.contact-form {
+  margin-top: 20px; }
+
+/*
+ * Social */
+.social {
+  position: absolute;
+  z-index: 20;
+  top: 20px;
+  right: 20px; }
+  .social ul, .social li {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .social ul li {
+    display: inline-block;
+    padding: 0 0 0 0; }
+    .social ul li a {
+      margin-right: 5px;
+      font-size: 2em;
+      display: block;
+      position: relative;
+      color: #818285; }
+      .social ul li a:hover {
+        border-color: #333333;
+        color: #333333; }
+      .social ul li a span {
+        padding: 5px 0px;
+        top: 1.5em;
+        left: 50%;
+        width: 80px;
+        margin: 0 0 0 -40px;
+        font-size: 0.5em;
+        position: absolute;
+        text-align: center;
+        display: none; }
+      .social ul li a:hover {
+        text-decoration: none; }
+        .social ul li a:hover span {
+          display: block; }
+      .social ul li a:before {
+        z-index: 1;
+        top: 0.16em;
+        left: 0.38em;
+        display: block;
+        text-indent: 0;
+        text-align: center; }
+  .social .twitter a {
+    /* '' */ }
+    .social .twitter a:before {
+      content: "\e802";
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      text-decoration: none;
+      font-size: inherit;
+      width: 1em;
+      margin-right: 0.2em;
+      text-align: center;
+      /* opacity: .8; */
+      /* For safety - reset parent styles, that can break glyph codes */
+      font-variant: normal;
+      text-transform: none;
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: 0.2em;
+      /* you can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+  .social .facebook a {
+    /* '' */ }
+    .social .facebook a:before {
+      content: "\e801";
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      text-decoration: none;
+      font-size: inherit;
+      width: 1em;
+      margin-right: 0.2em;
+      text-align: center;
+      /* opacity: .8; */
+      /* For safety - reset parent styles, that can break glyph codes */
+      font-variant: normal;
+      text-transform: none;
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: 0.2em;
+      /* you can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+  .social .linkedin a {
+    /* '' */ }
+    .social .linkedin a:before {
+      content: "\e800";
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      text-decoration: none;
+      font-size: inherit;
+      width: 1em;
+      margin-right: 0.2em;
+      text-align: center;
+      /* opacity: .8; */
+      /* For safety - reset parent styles, that can break glyph codes */
+      font-variant: normal;
+      text-transform: none;
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: 0.2em;
+      /* you can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+  .social .github a {
+    /* '' */ }
+    .social .github a:before {
+      content: "\e803";
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      text-decoration: none;
+      font-size: inherit;
+      width: 1em;
+      margin-right: 0.2em;
+      text-align: center;
+      /* opacity: .8; */
+      /* For safety - reset parent styles, that can break glyph codes */
+      font-variant: normal;
+      text-transform: none;
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: 0.2em;
+      /* you can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+/*
+ * Header */
+#header {
+  margin-top: 0px;
+  margin-bottom: 40px; }
+  @media (max-width: 950px) {
+    #header {
+      margin-top: 40px; } }
+
+.home #header {
+  margin-top: 70px; }
+
+#header:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+* html #header, *:first-child + html #header {
+  zoom: 1; }
+
+/* IE6 */
+/* IE7 */
+#header #logo {
+  padding: 20px 70px 50px 30px;
+  float: left; }
+  @media (max-width: 950px) {
+    #header #logo {
+      padding: 15px; } }
+  @media (max-width: 700px) {
+    #header #logo {
+      float: none; } }
+  #header #logo a {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 72px;
+    font-weight: normal;
+    color: black;
+    display: block;
+    background: url(../img/logo.png) no-repeat;
+    width: 258px;
+    height: 194px; }
+    #header #logo a span {
+      display: none; }
+#header #tagline {
+  padding: 30px 0px 30px 0px;
+  font-family: "Josefin Sans", sans-serif;
+  font-style: italic;
+  font-size: 30px;
+  line-height: 35px;
+  color: darkgrey;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc; }
+  #header #tagline a {
+    font-weight: normal;
+    color: #444444; }
+    #header #tagline a:hover {
+      color: black; }
+#header nav.mainMenu {
+  margin: 150px 0 0 0;
+  float: left; }
+  @media (max-width: 950px) {
+    #header nav.mainMenu {
+      margin: 30px 0 0 50px; } }
+  @media (max-width: 700px) {
+    #header nav.mainMenu {
+      margin: 30px 0 0 0;
+      float: none; } }
+  #header nav.mainMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    #header nav.mainMenu ul:after {
+      content: "";
+      display: table;
+      clear: both; }
+    #header nav.mainMenu ul:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0; }
+    #header nav.mainMenu ul li {
+      position: relative;
+      display: block;
+      list-style: none;
+      float: left;
+      margin: 0;
+      padding: 0; }
+      #header nav.mainMenu ul li:hover {
+        background-color: #818285; }
+      #header nav.mainMenu ul li a {
+        padding: 5px 25px;
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 3.5em;
+        line-height: 85px;
+        font-weight: 700;
+        color: #818285;
+        display: block; }
+      #header nav.mainMenu ul li:hover > a {
+        color: white; }
+      #header nav.mainMenu ul li a.cv {
+        padding-left: 90px;
+        background: url(../img/icon_cv.png) no-repeat 28px 15px; }
+      #header nav.mainMenu ul li:hover a.cv {
+        background-position-y: -85px; }
+      #header nav.mainMenu ul li a.oldStuff {
+        padding-left: 130px;
+        background: url(../img/icon_stuff.png) no-repeat 28px 15px; }
+      #header nav.mainMenu ul li:hover > a.oldStuff {
+        background-position-y: -85px; }
+      #header nav.mainMenu ul li a.games {
+        padding-left: 130px;
+        background: url(../img/icon_games.png) no-repeat 45px 20px; }
+      #header nav.mainMenu ul li:hover > a.games {
+        background-position-y: -80px; }
+      #header nav.mainMenu ul li a.bd {
+        padding-left: 130px;
+        background: url(../img/icon_bd.png) no-repeat 50px 15px; }
+      #header nav.mainMenu ul li:hover > a.bd {
+        background-position-y: -85px; }
+      #header nav.mainMenu ul li a:hover {
+        background-color: #8dc63f; }
+      @media (max-width: 950px) {
+        #header nav.mainMenu ul li {
+          float: none; }
+          #header nav.mainMenu ul li a.cv, #header nav.mainMenu ul li a.oldStuff {
+            padding-left: 120px; }
+          #header nav.mainMenu ul li a.cv {
+            background-position-x: 53px; }
+          #header nav.mainMenu ul li a.oldStuff {
+            background-position-x: 18px; } }
+      @media (max-width: 700px) {
+        #header nav.mainMenu ul li a {
+          padding: 5px; } }
+      #header nav.mainMenu ul li ul {
+        background-color: white;
+        position: absolute;
+        display: none;
+        left: 0;
+        right: 0;
+        z-index: 1000; }
+      #header nav.mainMenu ul li:hover ul {
+        display: block; }
+      #header nav.mainMenu ul li ul li {
+        display: block;
+        float: none; }
+
+/*
+ * Titles */
+#content h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  margin: 0 0 55px 0;
+  line-height: 80px;
+  color: #8dc63f; }
+#content h2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  color: #818285;
+  line-height: 42px; }
+#content h3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #818285; }
+
+/*
+ * Node */
+.node {
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid #cccccc; }
+  .node h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: #818285;
+    line-height: 42px;
+    color: #818285; }
+    .node h2 a {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 38px;
+      font-weight: 600;
+      color: #818285; }
+  .node h3 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 20px;
+    margin: 30px 0px 30px 0px; }
+  .node h4 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 20px;
+    margin: 15px 0px 15px 0px; }
+  .node .node-info {
+    font-size: 10px;
+    color: #888888;
+    margin-bottom: 10px; }
+  .node .node-more-info {
+    font-size: 10px;
+    color: #888888;
+    margin-top: 10px; }
+  .node .node-body a, .node .node-excerpt a {
+    border-bottom: 1px dotted black; }
+  .node .node-body a:hover, .node .node-excerpt a:hover {
+    border-bottom: 1px dotted #bbbbbb; }
+  .node ul {
+    list-style: circle;
+    margin-left: 30px;
+    margin-bottom: 10px; }
+  .node ol {
+    list-style: decimal;
+    margin-left: 30px; }
+  .node dl dt {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px; }
+  .node dl dd {
+    padding: 15px 0px 15px 15px; }
+  .node img {
+    border: 5px solid #222222;
+    margin: 10px 0px 10px 0px; }
+
+/*
+ * Blocks */
+.block + .block {
+  margin-top: 40px; }
+.block h3 {
+  margin: 20px 0px 30px 0px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 24px;
+  font-weight: normal; }
+.block .block-body ul {
+  border-top: 1px solid #eeeeee; }
+  .block .block-body ul li {
+    padding: 0px;
+    display: block;
+    background: white;
+    border-bottom: 1px solid #eeeeee; }
+    .block .block-body ul li:hover {
+      border-bottom: 1px solid #bbbbbb; }
+    .block .block-body ul li a {
+      display: block;
+      padding: 5px 5px 5px 3px; }
+
+.block-search form input[type=text] {
+  width: 190px;
+  float: left;
+  margin: 0px 5px 2px 2px; }
+.block-search form input[type=submit] {
+  padding: 4px; }
+
+/*
+ * Comments */
+.comments h3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  line-height: 20px;
+  margin: 15px 0px 25px 0px; }
+.comments .comment {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #eeeeee;
+  background: white; }
+  .comments .comment .comment {
+    margin-left: 45px;
+    margin-bottom: 0px; }
+    .comments .comment .comment + .comment {
+      margin-top: 10px; }
+.comments .comment-info {
+  background: #fafafa; }
+  .comments .comment-info .avatar {
+    float: left;
+    margin-right: 10px; }
+    .comments .comment-info .avatar img {
+      border: 2px solid #333333; }
+  .comments .comment-info .name {
+    display: block;
+    font-weight: bold; }
+  .comments .comment-info .date {
+    font-size: 10px;
+    color: #888888; }
+.comments .comment-body {
+  margin: 10px 0px 0px 0px; }
+.comments .comment-reply {
+  padding: 10px 0px 10px 0px; }
+  .comments .comment-reply a {
+    background: #464646;
+    color: white;
+    font-weight: normal;
+    padding: 5px; }
+    .comments .comment-reply a:hover {
+      background: #eeeeee;
+      color: #464646; }
+.comments .author {
+  border: 1px solid darkgrey;
+  background: #fafafa; }
+  .comments .author > .comment-info {
+    background: #efefef; }
+
+.comment-form h3 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  line-height: 20px;
+  margin: 30px 0px 30px 0px; }
+
+/*
+ * Pagination */
+div.paging {
+  text-align: center;
+  font-size: 16px;
+  color: white;
+  margin: 20px; }
+  div.paging span.current {
+    color: #484848;
+    padding: 7px 12px 7px 12px;
+    border: 1px solid #cccccc;
+    font-weight: bold; }
+  div.paging span a {
+    color: #484848;
+    padding: 7px 12px 7px 12px;
+    border: 1px solid #cccccc;
+    font-weight: bold;
+    border: 1px solid #eeeeee; }
+    div.paging span a:hover {
+      border: 1px solid #cccccc;
+      color: black; }
+
+/*
+ * Footer */
+#footer {
+  margin-top: 50px;
+  padding: 15px 0px 15px 0px;
+  background: white;
+  border-top: 1px #dddddd solid; }
+
+.emptyHome #footer {
+  border-top: none 0px; }
+
+#footer .right {
+  text-align: right; }
+
+/*
+ * pages */
+#content .twoColPage {
+  /*padding-left: 320px; */ }
+  #content .twoColPage:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0; }
+
+* html #content .twoColPage, *:first-child + html #content .twoColPage {
+  zoom: 1; }
+
+/* IE6 */
+/* IE7 */
+@media (min-width: 701px) {
+  #content .twoColPage > .left {
+    width: 260px;
+    float: left; }
+    #content .twoColPage > .left h1 {
+      text-align: right; }
+  #content .twoColPage > .right {
+    width: 600px;
+    float: right; } }
+/*
+ * games */
+#GamesIndex .game a {
+  padding: 5px;
+  display: block;
+  padding-left: 150px;
+  position: relative;
+  min-height: 125px; }
+  #GamesIndex .game a:hover {
+    background-color: #8dc63f; }
+#GamesIndex .game h2 {
+  margin-top: 0px; }
+#GamesIndex .game a:hover h2 {
+  color: white; }
+#GamesIndex .game img {
+  position: absolute;
+  top: 5px;
+  left: 5px; }
+#GamesIndex .game p {
+  font-weight: normal; }
+#GamesIndex .game a:hover p {
+  color: white; }
+
+/*
+ * commics */
+@media (min-width: 701px) {
+  #ComicsIndex {
+    padding-left: 50px; }
+    #ComicsIndex .left {
+      height: 400px;
+      margin: 0 90px 0 -50px; } }
+#ComicsIndex .comic {
+  float: left;
+  width: 280px;
+  height: 150px;
+  padding: 5px;
+  margin: 0 10px 50px 0; }
+  #ComicsIndex .comic:hover {
+    color: white;
+    background-color: #8dc63f; }
+    #ComicsIndex .comic:hover a {
+      color: white; }
+  #ComicsIndex .comic:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0; }
+
+* html #ComicsIndex .comic, *:first-child + html #ComicsIndex .comic {
+  zoom: 1; }
+
+/* IE6 */
+/* IE7 */
+#ComicsIndex .comic a:hover {
+  text-decoration: underline; }
+#ComicsIndex .comic a.img {
+  display: block;
+  float: left;
+  margin-right: 20px; }
+#ComicsIndex .comic h2 {
+  margin: 0 0 10px 0; }
+  #ComicsIndex .comic h2 a {
+    color: #818285; }
+#ComicsIndex .comic ul.versions {
+  list-style: none; }
+  #ComicsIndex .comic ul.versions li {
+    /*float:left;
+     *margin-right:20px; */
+    display: inline; }
+    #ComicsIndex .comic ul.versions li:first-child:after {
+      display: inline;
+      content: " - "; }
+
+#CommicView img.comic {
+  display: block;
+  margin: auto; }
+#CommicView .nav {
+  margin: 20px 0 20px 0; }
+  #CommicView .nav:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0; }
+
+* html #CommicView .nav, *:first-child + html #CommicView .nav {
+  zoom: 1; }
+
+/* IE6 */
+/* IE7 */
+#CommicView .nav .titleCopy, #CommicView .nav h1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  color: #818285;
+  line-height: 42px;
+  position: absolute;
+  width: 400px;
+  left: 50%;
+  margin-left: -200px;
+  text-align: center; }
+#CommicView .nav a {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 600;
+  color: #8dc63f;
+  display: block;
+  padding: 4px 10px 10px 10px; }
+  #CommicView .nav a:hover {
+    color: white;
+    background-color: #8dc63f; }
+  #CommicView .nav a.inactive {
+    color: #cccccc; }
+    #CommicView .nav a.inactive:hover {
+      color: #cccccc;
+      background-color: transparent; }
+#CommicView .nav .first, #CommicView .nav .prev {
+  float: left; }
+#CommicView .nav .next, #CommicView .nav .last {
+  float: right; }

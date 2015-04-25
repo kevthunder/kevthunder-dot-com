@@ -1,0 +1,13 @@
+name: Kevthunder.com
+description: Kevthunder.com theme for Croogo
+screenshot: screenshot.png
+
+author: Kevin Giguere Lacasse
+authorEmail: kev_gig@hotmail.com
+authorUrl: http://www.kevthunder.com
+
+menus:
+  - main
+
+regions:
+  - right

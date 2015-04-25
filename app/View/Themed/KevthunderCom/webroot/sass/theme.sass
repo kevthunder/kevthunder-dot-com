@@ -1,0 +1,708 @@
+/**
+ * Minimal theme for Croogo
+ *
+ * Link: http://fahad19.com/blog/minimal-theme
+ 
+$gray: #818285
+$almostBlack: #333
+ 
+@import "icons"
+
+@mixin clearfix
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+body
+  font-family: Arial,  sans-serif
+  font-size: 12px
+  font-variant: normal
+  font-weight: normal
+  line-height: 1.5em
+  color: #484848
+  min-width: 950px
+  @media (max-width: 950px)
+    min-width: 700px
+  @media (max-width: 700px)
+    min-width: 300px
+  min-height: 300px
+  position: absolute
+  height: 100%
+  width: 100%
+  margin: 0
+
+a
+  text-decoration: none
+  color: #000000
+  font-weight: 600
+  &:hover
+    color: #666
+
+p + p
+  margin-top: 20px
+
+pre
+  background: #f7f7f7
+  margin: 10px 0px 10px 0px
+  padding: 20px
+  font-family: Courier, monospace
+
+blockquote
+  margin: 20px 0px 20px 0px
+  padding: 20px 50px 20px 50px
+  p
+    font-family: 'Josefin Sans', sans-serif
+    font-size: 16px
+    font-style: italic
+    cite
+      text-align: right
+      display: block
+
+hr
+  margin-top: 100px
+  border: 0
+  border-top: 1px solid #ccc
+  color: #fff
+
+/**
+ * wrapper
+
+#wrapper
+  width: 950px
+  position: absolute
+  margin-left: -475px
+  left: 50%
+  @media (max-width: 950px)
+    width: 700px
+    margin-left: -350px
+  @media (max-width: 700px)
+    width: 300px
+    margin-left: -150px
+
+  
+  
+@media (min-width: 951px)
+  .emptyHome #wrapper
+    top: 40%
+    margin-top: -200px
+
+/**
+ * Form
+
+form
+  .input
+    margin-bottom: 15px
+    label
+      display: block
+      font-size: 18px
+      font-weight: normal
+      padding: 0px 0px 5px 0px
+    input[type=text]
+      width: 500px
+      border: 1px solid #a5acb2
+      padding: 5px
+      &:focus
+        background: #fafafa
+    textarea
+      width: 500px
+      border: 1px solid #a5acb2
+      padding: 5px
+      font-family: Arial
+      &:focus
+        background: #fafafa
+  input[type=submit]
+    background: #464646
+    color: #fff
+    font-weight: bold
+    border: 1px solid #333
+    padding: 5px
+    &:active
+      border: 1px solid #ccc
+
+.contact-form
+  margin-top: 20px
+
+/**
+ * Social
+
+.social
+  position: absolute
+  z-index: 20
+  top: 20px
+  right: 20px
+  ul, li
+    margin: 0
+    padding: 0
+    list-style: none
+  ul
+    li 
+      display: inline-block
+      padding: 0 0 0 0
+      a
+        margin-right: 5px
+        font-size: 2em
+        display: block
+        position: relative
+        color: $gray
+        &:hover
+          border-color: $almostBlack
+          color: $almostBlack
+        span
+          padding: 5px 0px
+          top: 1.5em
+          left: 50%
+          width: 80px
+          margin: 0 0 0 -40px
+          font-size: 0.5em
+          position: absolute
+          text-align: center
+          display: none
+        &:hover
+          text-decoration: none
+          span
+            display: block
+        &:before
+          z-index: 1
+          top: 0.16em
+          left: 0.38em
+          display: block
+          text-indent: 0
+          text-align: center
+  .twitter a
+    @include icon-twitter
+  .facebook a
+    @include icon-facebook-squared
+  .linkedin a
+    @include icon-linkedin-squared
+  .github a
+    @include icon-github-circled
+      
+      
+/**
+ * Header
+
+ 
+ 
+#header
+  margin-top: 0px
+  margin-bottom: 40px
+  @media (max-width: 950px)
+    margin-top: 40px
+
+.home #header
+  margin-top: 70px
+
+#header:after
+  visibility: hidden
+  display: block
+  font-size: 0
+  content: " "
+  clear: both
+  height: 0
+
+*
+  html #header, &:first-child + html #header
+    zoom: 1
+
+/* IE6
+/* IE7
+
+#header
+  #logo
+    padding: 20px 70px 50px 30px
+    float: left
+    @media (max-width: 950px)
+      padding: 15px
+    @media (max-width: 700px)
+      float: none
+    a
+      font-family: 'Josefin Sans', sans-serif
+      font-size: 72px
+      font-weight: normal
+      color: #000
+      display: block
+      background: url(../img/logo.png) no-repeat
+      width: 258px
+      height: 194px
+      span
+        display: none
+  #tagline
+    padding: 30px 0px 30px 0px
+    font-family: 'Josefin Sans', sans-serif
+    font-style: italic
+    font-size: 30px
+    line-height: 35px
+    color: #a9a9a9
+    border-top: 1px solid #ccc
+    border-bottom: 1px solid #ccc
+    a
+      font-weight: normal
+      color: #444
+      &:hover
+        color: #000
+  nav.mainMenu
+    margin: 150px 0 0 0
+    float: left
+    @media (max-width: 950px)
+      margin: 30px 0 0 50px
+    @media (max-width: 700px)
+      margin: 30px 0 0 0
+      float: none
+    ul
+      list-style: none
+      margin: 0
+      padding: 0
+      @include clearfix
+      &:after
+        visibility: hidden
+        display: block
+        font-size: 0
+        content: " "
+        clear: both
+        height: 0
+      li
+        position: relative
+        display: block
+        list-style: none
+        float: left
+        margin: 0
+        padding: 0
+        &:hover
+          background-color: $gray
+        a
+          padding: 5px 25px
+          font-family: 'Josefin Sans', sans-serif
+          font-size: 3.5em
+          line-height: 85px
+          font-weight: 700
+          color: $gray
+          display: block
+        &:hover > a
+          color: #ffffff
+        a.cv
+          padding-left: 90px
+          background: url(../img/icon_cv.png) no-repeat 28px 15px
+        &:hover a.cv
+          background-position-y: -85px
+        a.oldStuff
+          padding-left: 130px
+          background: url(../img/icon_stuff.png) no-repeat 28px 15px
+        &:hover > a.oldStuff
+          background-position-y: -85px
+        a.games
+          padding-left: 130px
+          background: url(../img/icon_games.png) no-repeat 45px 20px
+        &:hover > a.games
+          background-position-y: -80px
+        a.bd
+          padding-left: 130px
+          background: url(../img/icon_bd.png) no-repeat 50px 15px
+        &:hover > a.bd
+          background-position-y: -85px
+        a:hover
+          background-color: #8dc63f
+        @media (max-width: 950px)
+          float: none
+          a.cv, a.oldStuff
+            padding-left: 120px
+          a.cv
+            background-position-x: 53px
+          a.oldStuff
+            background-position-x: 18px
+        @media (max-width: 700px)
+          a
+            padding: 5px
+        ul
+          background-color: #ffffff
+          position: absolute
+          display: none
+          left: 0
+          right: 0
+          z-index: 1000
+        &:hover ul
+          display: block
+        ul li
+          display: block
+          float: none
+  
+
+
+/**
+ * Titles
+
+#content
+  h1
+    font-family: 'Josefin Sans', sans-serif
+    font-size: 72px
+    font-weight: 700
+    margin: 0 0 55px 0
+    line-height: 80px
+    color: #8dc63f
+  h2
+    font-family: 'Josefin Sans', sans-serif
+    font-size: 38px
+    font-weight: 600
+    color: $gray
+    line-height: 42px
+  h3
+    font-family: 'Josefin Sans', sans-serif
+    font-size: 24px
+    font-weight: 600
+    color: $gray
+
+/**
+ * Node
+
+.node
+  padding-bottom: 60px
+  margin-bottom: 60px
+  border-bottom: 1px solid #ccc
+  h2
+    font-family: 'Josefin Sans', sans-serif
+    font-size: 38px
+    font-weight: 600
+    color: $gray
+    a
+      font-family: 'Josefin Sans', sans-serif
+      font-size: 38px
+      font-weight: 600
+      color: $gray
+    line-height: 42px
+    color: $gray
+  h3
+    font-family: 'Josefin Sans', sans-serif
+    font-size: 24px
+    font-weight: normal
+    line-height: 20px
+    margin: 30px 0px 30px 0px
+  h4
+    font-family: 'Josefin Sans', sans-serif
+    font-size: 18px
+    font-weight: normal
+    line-height: 20px
+    margin: 15px 0px 15px 0px
+  .node-info
+    font-size: 10px
+    color: #888
+    margin-bottom: 10px
+  .node-more-info
+    font-size: 10px
+    color: #888
+    margin-top: 10px
+  .node-body a, .node-excerpt a
+    border-bottom: 1px dotted #000
+  .node-body a:hover, .node-excerpt a:hover
+    border-bottom: 1px dotted #bbb
+  ul
+    list-style: circle
+    margin-left: 30px
+    margin-bottom: 10px
+  ol
+    list-style: decimal
+    margin-left: 30px
+  dl
+    dt
+      font-family: 'Josefin Sans', sans-serif
+      font-size: 18px
+    dd
+      padding: 15px 0px 15px 15px
+  img
+    border: 5px solid #222
+    margin: 10px 0px 10px 0px
+
+/**
+ * Blocks
+
+.block
+  + .block
+    margin-top: 40px
+  h3
+    margin: 20px 0px 30px 0px
+    font-family: 'Josefin Sans', sans-serif
+    font-size: 24px
+    font-weight: normal
+  .block-body ul
+    border-top: 1px solid #eee
+    li
+      padding: 0px
+      display: block
+      background: #fff
+      border-bottom: 1px solid #eee
+      &:hover
+        border-bottom: 1px solid #bbb
+      a
+        display: block
+        padding: 5px 5px 5px 3px
+
+.block-search form input
+  &[type=text]
+    width: 190px
+    float: left
+    margin: 0px 5px 2px 2px
+  &[type=submit]
+    padding: 4px
+
+/**
+ * Comments
+
+.comments
+  h3
+    font-family: 'Josefin Sans', sans-serif
+    font-size: 28px
+    font-weight: normal
+    line-height: 20px
+    margin: 15px 0px 25px 0px
+  .comment
+    margin-bottom: 20px
+    padding: 10px
+    border: 1px solid #eee
+    background: #fff
+    .comment
+      margin-left: 45px
+      margin-bottom: 0px
+      + .comment
+        margin-top: 10px
+  .comment-info
+    background: #fafafa
+    .avatar
+      float: left
+      margin-right: 10px
+      img
+        border: 2px solid #333
+    .name
+      display: block
+      font-weight: bold
+    .date
+      font-size: 10px
+      color: #888
+  .comment-body
+    margin: 10px 0px 0px 0px
+  .comment-reply
+    padding: 10px 0px 10px 0px
+    a
+      background: #464646
+      color: #fff
+      font-weight: normal
+      padding: 5px
+      &:hover
+        background: #eee
+        color: #464646
+  .author
+    border: 1px solid #a9a9a9
+    background: #fafafa
+    > .comment-info
+      background: #efefef
+
+.comment-form h3
+  font-family: 'Josefin Sans', sans-serif
+  font-size: 28px
+  font-weight: normal
+  line-height: 20px
+  margin: 30px 0px 30px 0px
+
+/**
+ * Pagination
+
+div.paging
+  text-align: center
+  font-size: 16px
+  color: #fff
+  margin: 20px
+  span
+    &.current
+      color: #484848
+      padding: 7px 12px 7px 12px
+      border: 1px solid #ccc
+      font-weight: bold
+    a
+      color: #484848
+      padding: 7px 12px 7px 12px
+      border: 1px solid #ccc
+      font-weight: bold
+      border: 1px solid #eee
+      &:hover
+        border: 1px solid #ccc
+        color: #000
+
+/**
+ * Footer
+
+#footer
+  margin-top: 50px
+  padding: 15px 0px 15px 0px
+  background: #fff
+  border-top: 1px #ddd solid
+
+.emptyHome #footer
+  border-top: none 0px
+
+#footer .right
+  text-align: right
+
+/**
+ * pages
+
+#content .twoColPage
+  /*padding-left: 320px;
+  &:after
+    visibility: hidden
+    display: block
+    font-size: 0
+    content: " "
+    clear: both
+    height: 0
+
+*
+  html #content .twoColPage, &:first-child + html #content .twoColPage
+    zoom: 1
+
+/* IE6
+/* IE7
+
+@media (min-width: 701px)
+  #content .twoColPage >
+    .left
+      width: 260px
+      float: left
+      h1
+        text-align: right
+    .right
+      width: 600px
+      float: right
+
+/**
+ * games
+
+#GamesIndex .game
+  a
+    padding: 5px
+    display: block
+    padding-left: 150px
+    position: relative
+    min-height: 125px
+    &:hover
+      background-color: #8dc63f
+  h2
+    margin-top: 0px
+  a:hover h2
+    color: #ffffff
+  img
+    position: absolute
+    top: 5px
+    left: 5px
+  p
+    font-weight: normal
+  a:hover p
+    color: #ffffff
+
+/**
+ * commics
+
+#ComicsIndex
+  @media (min-width: 701px)
+    padding-left: 50px
+    .left
+      height: 400px
+      margin: 0 90px 0 -50px
+  .comic
+    float: left
+    width: 280px
+    height: 150px
+    padding: 5px
+    margin: 0 10px 50px 0
+    &:hover
+      color: #ffffff
+      background-color: #8dc63f
+      a
+        color: #ffffff
+    &:after
+      visibility: hidden
+      display: block
+      font-size: 0
+      content: " "
+      clear: both
+      height: 0
+
+*
+  html #ComicsIndex .comic, &:first-child + html #ComicsIndex .comic
+    zoom: 1
+
+/* IE6
+/* IE7
+
+#ComicsIndex .comic
+  a
+    &:hover
+      text-decoration: underline
+    &.img
+      display: block
+      float: left
+      margin-right: 20px
+  h2
+    margin: 0 0 10px 0
+    a
+      color: $gray
+  ul.versions
+    list-style: none
+    li
+      /*float:left;
+       *margin-right:20px;
+      display: inline
+      &:first-child:after
+        display: inline
+        content: " - "
+
+#CommicView
+  img.comic
+    display: block
+    margin: auto
+  .nav
+    margin: 20px 0 20px 0
+    &:after
+      visibility: hidden
+      display: block
+      font-size: 0
+      content: " "
+      clear: both
+      height: 0
+
+*
+  html #CommicView .nav, &:first-child + html #CommicView .nav
+    zoom: 1
+
+/* IE6
+/* IE7
+
+#CommicView .nav
+  .titleCopy, h1
+    font-family: 'Josefin Sans', sans-serif
+    font-size: 38px
+    font-weight: 600
+    color: $gray
+    line-height: 42px
+    position: absolute
+    width: 400px
+    left: 50%
+    margin-left: -200px
+    text-align: center
+  a
+    font-family: 'Josefin Sans', sans-serif
+    font-size: 24px
+    line-height: 28px
+    font-weight: 600
+    color: #8dc63f
+    display: block
+    padding: 4px 10px 10px 10px
+    &:hover
+      color: #ffffff
+      background-color: #8dc63f
+    &.inactive
+      color: #cccccc
+      &:hover
+        color: #cccccc
+        background-color: transparent
+  .first, .prev
+    float: left
+  .next, .last
+    float: right
