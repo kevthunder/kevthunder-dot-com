@@ -743,12 +743,30 @@ div.paging {
     clear: both;
     height: 0; }
 
-#CommicView img.comic {
+#CommicView .comicImgContainer {
+  position: relative; /* Establishes a positioning context for the images */
+  width: 650px;
+  height: 1005px;
+  overflow: hidden; 
   display: block;
-  margin: auto; }
+  margin: auto; 
+}
 
+  #CommicView .comicImgContainer .comicPage {
+      position: absolute;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover; /* Ensures images fill the container without stretching */
+  }
+    #CommicView .comicImgContainer .comicPage.active {
+        display: block;
+    }
         /* Animation class for the image sliding OUT to the left */
-        .slide-out {
+        #CommicView .comicImgContainer .comicPage.slide-out {
+            display: block;
             animation: slideOut 0.6s ease-in-out forwards;
         }
 
@@ -762,7 +780,8 @@ div.paging {
         }
 
         /* Animation class for the new image sliding IN from the right */
-        .slide-in {
+        #CommicView .comicImgContainer .comicPage.slide-in {
+            display: block;
             /* Start the new image off-screen to the right */
             transform: translateX(100%);
             animation: slideIn 0.6s ease-in-out forwards;
@@ -771,6 +790,37 @@ div.paging {
         @keyframes slideIn {
             from {
                 transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        /* Animation class for the image sliding OUT to the right */
+        #CommicView .comicImgContainer .comicPage.slide-out-right {
+            display: block;
+            animation: slideOutRight 0.6s ease-in-out forwards;
+        }
+
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Animation class for the new image sliding IN from the right */
+        #CommicView .comicImgContainer .comicPage.slide-in-right {
+            display: block;
+            /* Start the new image off-screen to the right */
+            transform: translateX(-100%);
+            animation: slideInRight 0.6s ease-in-out forwards;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(-100%);
             }
             to {
                 transform: translateX(0);
@@ -788,12 +838,10 @@ div.paging {
   font-weight: 600;
   color: #818285;
   line-height: 42px;
-  position: absolute;
-  width: 400px;
-  left: 50%;
-  margin-left: -200px;
+  margin: 0;
+  padding: 0;
   text-align: center; }
-#CommicView .nav a {
+#CommicView .nav a.btn {
   font-family: "Josefin Sans", sans-serif;
   font-size: 24px;
   line-height: 28px;
@@ -801,15 +849,21 @@ div.paging {
   color: #8dc63f;
   display: block;
   padding: 4px 10px 10px 10px; }
-  #CommicView .nav a:hover {
+  #CommicView .nav a.btn:hover {
     color: white;
     background-color: #8dc63f; }
-  #CommicView .nav a.inactive {
+  #CommicView .nav a.btn.inactive {
     color: #cccccc; }
-    #CommicView .nav a.inactive:hover {
+    #CommicView .nav a.btn.inactive:hover {
       color: #cccccc;
       background-color: transparent; }
 #CommicView .nav .first, #CommicView .nav .prev {
   float: left; }
 #CommicView .nav .next, #CommicView .nav .last {
   float: right; }
+
+#CommicView .languageNav {
+  
+  clear: both;
+  text-align: center;
+}
