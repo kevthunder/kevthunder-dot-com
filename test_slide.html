@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slide Transition</title>
+    <style>
+        /* --- CSS for Styling and Animation --- */
+
+        /* General page styling */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* This container holds the image and is key for the animation */
+        .image-container {
+            position: relative; /* Establishes a positioning context for the images */
+            width: 500px;
+            height: 350px;
+            overflow: hidden; /* Crucial: This clips the images as they slide out of view */
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            margin: 20px;
+        }
+        
+
+        /* Styling for all images inside the container */
+        .image-container img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover; /* Ensures images fill the container without stretching */
+        }
+
+        /* Animation class for the image sliding OUT to the left */
+        .slide-out {
+            animation: slideOut 0.6s ease-in-out forwards;
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Animation class for the new image sliding IN from the right */
+        .slide-in {
+            /* Start the new image off-screen to the right */
+            transform: translateX(100%);
+            animation: slideIn 0.6s ease-in-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        /* Button styling */
+        button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            background-color: #007aff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Image Slide Transition 🖼️</h1>
+
+    <div class="image-container" id="image-container">
+        <img src="https://picsum.photos/id/1015/500/350" alt="A scenic landscape">
+    </div>
+
+    <button id="change-image-btn">Next Image</button>
+
+    <script>
+        // --- JavaScript Logic ---
+
+        // 1. An array of image URLs to cycle through
+        const imageUrls = [
+            "https://picsum.photos/id/1018/500/350",
+            "https://picsum.photos/id/1025/500/350",
+            "https://picsum.photos/id/1040/500/350",
+            "https://picsum.photos/id/1062/500/350",
+            "https://picsum.photos/id/1015/500/350" // The initial image is last so the first click goes to the first URL
+        ];
+
+        let currentImageIndex = imageUrls.length - 1;
+
+        // 2. Get references to the HTML elements we need to work with
+        const imageContainer = document.getElementById('image-container');
+        const changeButton = document.getElementById('change-image-btn');
+
+        // 3. Add an event listener to the button that runs a function on click
+        changeButton.addEventListener('click', (e) => {
+            // Find the current image that is displayed
+            const oldImage = imageContainer.querySelector('img');
+
+            // Determine the index of the next image, looping back to the start if needed
+            currentImageIndex = (currentImageIndex + 1) % imageUrls.length;
+
+            // Create a new <img> element in memory
+            const newImage = document.createElement('img');
+            newImage.src = imageUrls[currentImageIndex];
+            newImage.alt = "A scenic landscape";
+
+            // Add CSS classes to the old and new images to trigger their animations
+            oldImage.classList.add('slide-out');
+            newImage.classList.add('slide-in');
+            
+            // Add the new image to the container so it becomes visible
+            imageContainer.appendChild(newImage);
+
+            // Clean up the old image from the page after its animation finishes
+            // This prevents the container from filling up with dozens of hidden images
+            oldImage.addEventListener('animationend', () => {
+                oldImage.remove();
+            }, { once: true }); // The {once: true} option is a nice shortcut to auto-remove the listener
+        });
+    </script>
+
+</body>
+</html>
